@@ -1,8 +1,11 @@
 import random
 import numpy as np
 
-n_investors_input = ["investor1", "investor2", "investor3"]  #can change to what I want
+#doing nothing right now
+#n_investors_input = ["investor1", "investor2", "investor3"]  #can change to what I want
 
+#5 is arbitrary
+investor_guesses_sd = 5
 
 #defining this outside the dictionary because the "price" has to reference it and can't be self referencing (I think)
 sec1_fv = random.randrange(0,100), #cap at 100 is arbitrary (should this be a normal distribution?)
@@ -21,19 +24,18 @@ perfect_fv_investor = {
 #def make_investors(n_investors):
 #    for i in n_investors:
 #        i = {
-#            "security_1_estimate" : np.random.normal(security_1["fake_value"],5) #std dev of 5 is arbitrary
+#            "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
 #        }
 
 investor1 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],5) #std dev of 5 is arbitrary
+    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
 }
-
 investor2 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],5) #std dev of 5 is arbitrary
+    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
 }
 
 investor3 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],5) #std dev of 5 is arbitrary
+    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
 }
 
 #running it
