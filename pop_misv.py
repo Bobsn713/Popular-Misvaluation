@@ -27,17 +27,21 @@ perfect_fv_investor = {
 #            "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
 #        }
 
-investor1 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
-}
-investor2 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
-}
+investors = {}
 
-investor3 = {
-    "security_1_estimate" : np.random.normal(security_1["fake_value"],investor_guesses_sd) 
-}
+n_investors = 5 #I can choose this
 
+investor_names = []
+
+for i in range(n_investors):
+    investor_names.append(f"investor{i}")
+
+for name in investor_names:
+    investors[name] = {"security_1_estimate": np.random.normal(security_1["fake_value"],investor_guesses_sd)}
+
+print(investors)
+
+"""
 #running it
 #make_investors(n_investors_input)
 
@@ -46,3 +50,4 @@ print("Investor 1",  investor1)
 print("Investor 2", investor2)
 print("Investor 3", investor3)
 print("Perfect Investor", perfect_fv_investor)
+"""
