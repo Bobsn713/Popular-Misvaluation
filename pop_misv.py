@@ -59,12 +59,24 @@ print()
 
 def should_buy(investor,security):
     if securities[security]["price"] < investors[investor][f"{security}_estimate"]:
+        securities[security]["price"] += 1 #obviously crude
         return "buy"
     else:
         return "not buy"
 
-for investor in investors:
+"""for investor in investors:
     for security in securities:
         print(f'{investor} should {should_buy(investor,security)} {security}')
         print(f'Price: {securities[security]["price"]}     Estimate: {investors[investor][f"{security}_estimate"]}')
-        print()
+        print()"""
+
+
+#I think there's a minor problem in here with the printing where its printing old prices or something?
+days = range(1,6)
+for day in days:
+    print(f"Day {day}")
+    for investor in investors:
+        for security in securities:
+            print(f'{investor} should {should_buy(investor,security)} {security}')
+            print(f'Price: {securities[security]["price"]}     Estimate: {investors[investor][f"{security}_estimate"]}')
+    print()
