@@ -55,3 +55,16 @@ for name in investor_names:
 print(f"Securities: {securities}")
 print(f"Perfect Investor: {perfect_fv_investor}")
 print(f"Investors: {investors}")
+print()
+
+def should_buy(investor,security):
+    if securities[security]["price"] < investors[investor][f"{security}_estimate"]:
+        return "buy"
+    else:
+        return "not buy"
+
+for investor in investors:
+    for security in securities:
+        print(f'{investor} should {should_buy(investor,security)} {security}')
+        print(f'Price: {securities[security]["price"]}     Estimate: {investors[investor][f"{security}_estimate"]}')
+        print()
