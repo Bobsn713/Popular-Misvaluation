@@ -17,21 +17,20 @@ for i in range(n_securities):
 #use the list of n investor names as keys in the investors dictionary, with values that 
 #are randomly generated estimates of security 1's fake value
 for name in security_names:
-    securities[name] = {"fake_value": random.randrange(0,100),"price": random.randrange(0,100)}
-
+    securities[name] = {"fake_value": random.randrange(0,100), #cap at 100 is arbitrary (should this be a normal distribution?)
+                        "price": random.randrange(0,100)} #cap at 100 is arbitrary (should this be a normal distribution?)
 
 print(securities)
 
-"""security_1 = {
-    "fake_value" : random.randrange(0,100), #cap at 100 is arbitrary (should this be a normal distribution?),
-    "price" : random.randrange(0,100), #cap at 100 is arbitrary (should this be a normal distribution?)
-}
+#We have to do a for loop through the securities dictionary (this should be easier than for all the investors)
+perfect_fv_investor = {}
 
-perfect_fv_investor = {
-    "security_1_estimate" : security_1["fake_value"]
+for security in security_names:
+     perfect_fv_investor[f"{security}_estimate"]  = securities[security]["fake_value"] 
 
-}
+print(perfect_fv_investor)
 
+"""
 #initializing
 investors = {}
 investor_names = []
